@@ -2,104 +2,144 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>픽고 추천템</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>픽고의 추천템 BEST5</title>
   <style>
     body {
+      font-family: 'Noto Sans KR', sans-serif;
+      padding: 20px;
       margin: 0;
-      padding: 0;
-      font-family: "Segoe UI", sans-serif;
-      background-color: #ffffff;
-      text-align: center;
+      background: #fff;
     }
 
-    .title {
-      font-size: clamp(18px, 4vw, 32px);
-      font-weight: 700;
-      color: #ff5722;
-      margin: 24px 0 16px 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .title::before {
-      content: "⭐";
-      font-size: 1.2em;
-    }
-
-    .carousel {
-      position: relative;
-      width: 100%;
+    .container {
       max-width: 720px;
-      margin: auto;
-      overflow: hidden;
+      margin: 0 auto;
     }
 
-    .carousel-inner {
+    h2 {
+      text-align: center;
+      font-size: 1.8em;
+      font-weight: 800;
+      color: #222;
+      margin-bottom: 10px;
+    }
+
+    .card {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 30px;
       display: flex;
-      width: 500%;
-      animation: slide 25s infinite;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      background: #fff;
     }
 
-    .carousel-inner a {
-      flex: 0 0 100%;
+    .card img {
+      border-radius: 8px;
+      width: 120px;
+      height: 240px;
+      object-fit: cover;
+      flex-shrink: 0;
     }
 
-    .carousel-inner img {
-      width: 100%;
-      height: auto;
-      max-height: 300px;
-      object-fit: contain;
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 1.2em;
+      color: #111;
     }
 
-    @keyframes slide {
-      0%   { transform: translateX(0%); }
-      20%  { transform: translateX(0%); }
-      25%  { transform: translateX(-100%); }
-      45%  { transform: translateX(-100%); }
-      50%  { transform: translateX(-200%); }
-      70%  { transform: translateX(-200%); }
-      75%  { transform: translateX(-300%); }
-      95%  { transform: translateX(-300%); }
-      100% { transform: translateX(0%); }
+    .card p {
+      margin: 0 0 10px;
+      color: #444;
     }
 
-    .disclaimer {
-      font-size: 11px;
-      color: #aaa;
-      margin-top: 20px;
+    .card .btn {
+      display: inline-block;
+      background: #feca1b;
+      color: #000;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .notice {
+      font-size: 12px;
+      color: #999;
+      text-align: center;
+      margin-top: 30px;
     }
   </style>
 </head>
 <body>
+  <div class="container">
+    <h2>🔥 픽고의 추천템 BEST5</h2>
 
-  <div class="title">픽고의 추천템 BEST5</div>
+    <!-- 광고 카드 1 -->
+    <div class="card">
+      <a href="https://link.coupang.com/a/cEsYAn" target="_blank" rel="nofollow">
+        <img src="https://image2.coupangcdn.com/image/affiliate/banner/6775575bf2273f832cc262760c2b8c9e@2x.jpg" alt="탐사 미니 미용티슈 250매입 (12개)">
+      </a>
+      <div>
+        <h3>탐사 미니 미용티슈 250매입 (12개)</h3>
+        <p>자취방, 사무실, 차량에 두기 좋은 컴팩트 미용티슈! 오래 쓰는 실속형 꿀템입니다.</p>
+        <a href="https://link.coupang.com/a/cEsYAn" target="_blank" rel="nofollow" class="btn">👉 최저가 보러가기</a>
+      </div>
+    </div>
 
-  <div class="carousel">
-    <div class="carousel-inner">
-      <a href="https://link.coupang.com/a/cEsYAn" target="_blank" referrerpolicy="unsafe-url">
-        <img src="https://image2.coupangcdn.com/image/affiliate/banner/6775575bf2273f832cc262760c2b8c9e@2x.jpg" alt="탐사 미니 미용티슈 250매, 250매입, 12개">
+    <!-- 광고 카드 2 -->
+    <div class="card">
+      <a href="https://link.coupang.com/a/cEs0Vz" target="_blank" rel="nofollow">
+        <img src="https://static.coupangcdn.com/image/affiliate/banner/d0bc6c53ff5f436a6c3c53dc3f29851d@2x.jpg" alt="릴렉스파 안마의자 흔들의자">
       </a>
-      <a href="https://link.coupang.com/a/cEs0Vz" target="_blank" referrerpolicy="unsafe-url">
-        <img src="https://static.coupangcdn.com/image/affiliate/banner/d0bc6c53ff5f436a6c3c53dc3f29851d@2x.jpg" alt="릴렉스파 안마의자">
+      <div>
+        <h3>릴렉스파 안마의자 전신 마사지 흔들의자 (오크색)</h3>
+        <p>집에서 간편하게 전신 마사지, 편안한 1인용 흔들의자 소파로 휴식 완성!</p>
+        <a href="https://link.coupang.com/a/cEs0Vz" target="_blank" rel="nofollow" class="btn">👉 자세히 보기</a>
+      </div>
+    </div>
+
+    <!-- 광고 카드 3 -->
+    <div class="card">
+      <a href="https://link.coupang.com/a/cEs04p" target="_blank" rel="nofollow">
+        <img src="https://img1a.coupangcdn.com/image/affiliate/banner/759fbd0db149d378da6e424a9749d735@2x.jpg" alt="렌지후드 필터 세트">
       </a>
-      <a href="https://link.coupang.com/a/cEs04p" target="_blank" referrerpolicy="unsafe-url">
-        <img src="https://img1a.coupangcdn.com/image/affiliate/banner/759fbd0db149d378da6e424a9749d735@2x.jpg" alt="렌가드 필터 세트">
-      </a>
-      <a href="https://link.coupang.com/a/cEs1cu" target="_blank" referrerpolicy="unsafe-url">
+      <div>
+        <h3>렌가드 렌지후드 시스템 필터 900 + 리필필터 2p</h3>
+        <p>깨끗한 주방 환경 유지 필수템, 렌지후드 필터 세트로 교체 간편!</p>
+        <a href="https://link.coupang.com/a/cEs04p" target="_blank" rel="nofollow" class="btn">👉 구매하러 가기</a>
+      </div>
+    </div>
+
+    <!-- 광고 카드 4 -->
+    <div class="card">
+      <a href="https://link.coupang.com/a/cEs1cu" target="_blank" rel="nofollow">
         <img src="https://image2.coupangcdn.com/image/affiliate/banner/76ce4f772b2699cf58eabb72bc3e5d45@2x.jpg" alt="노바핏 러닝 벨트">
       </a>
-      <a href="https://link.coupang.com/a/cEs1nt" target="_blank" referrerpolicy="unsafe-url">
-        <img src="https://image3.coupangcdn.com/image/affiliate/banner/be314bcf14b96a2ded434f63af574fe8@2x.jpg" alt="여름 냉감 슬랙스">
-      </a>
+      <div>
+        <h3>노바핏 고급형 러닝 벨트 가방 와이드 플립 벨트</h3>
+        <p>운동할 때 필수, 편리한 수납과 안정감 있는 착용감의 러닝 벨트!</p>
+        <a href="https://link.coupang.com/a/cEs1cu" target="_blank" rel="nofollow" class="btn">👉 구매하러 가기</a>
+      </div>
     </div>
-  </div>
 
-  <div class="disclaimer">
-    ※ 이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.
-  </div>
+    <!-- 광고 카드 5 -->
+    <div class="card">
+      <a href="https://link.coupang.com/a/cEs1nt" target="_blank" rel="nofollow">
+        <img src="https://image3.coupangcdn.com/image/affiliate/banner/be314bcf14b96a2ded434f63af574fe8@2x.jpg" alt="여름 바지 냉감 슬랙스">
+      </a>
+      <div>
+        <h3>2장묶음 남자 냉감 바지 시원한 여름 슬랙스</h3>
+        <p>여름철 필수 아이템, 쾌적하고 시원한 사방스판 아이스 슬랙스입니다.</p>
+        <a href="https://link.coupang.com/a/cEs1nt" target="_blank" rel="nofollow" class="btn">👉 자세히 보기</a>
+      </div>
+    </div>
 
+    <!-- 고지 문구 -->
+    <p class="notice">※ 본 포스팅은 쿠팡 파트너스 활동을 통해 일정 수수료를 지급받을 수 있습니다.</p>
+  </div>
 </body>
 </html>

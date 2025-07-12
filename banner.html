@@ -31,13 +31,12 @@
     max-width: 720px;
     margin: auto;
     overflow: hidden;
-    cursor: pointer;
+    cursor: default;
   }
   .carousel-inner {
     display: flex;
     width: 500%;
     transition: transform 0.5s ease;
-    /* 애니메이션은 자바스크립트로 제어 */
   }
   .carousel-inner a {
     flex: 0 0 100%;
@@ -63,7 +62,7 @@
 <body>
 
 <div class="title">픽고의 추천템 BEST5</div>
-<div class="info">▶ 광고 영역을 클릭하면 자동 슬라이드가 시작됩니다.</div>
+<div class="info">▶ 광고가 자동으로 부드럽게 슬라이드됩니다.</div>
 
 <div class="carousel" id="carousel">
   <div class="carousel-inner" id="carouselInner">
@@ -93,34 +92,29 @@
   const carouselInner = document.getElementById('carouselInner');
   const totalBanners = carouselInner.children.length;
   let currentIndex = 0;
-  let intervalId = null;
-
-  // 초기 랜덤 인덱스 선택 및 위치 세팅
+  
+  // 초기 랜덤 인덱스 셋팅
   function setInitialPosition() {
     currentIndex = Math.floor(Math.random() * totalBanners);
     updateTransform();
   }
 
+  // transform 이동 함수
   function updateTransform() {
     carouselInner.style.transform = `translateX(-${currentIndex * 100}%)`;
   }
 
-  // 자동 슬라이드 시작
+  // 자동 슬라이드 시작 (3초 머무르고 0.5초 전환)
   function startAutoSlide() {
-    if (intervalId) return; // 이미 실행중이면 무시
-    intervalId = setInterval(() => {
+    setInterval(() => {
       currentIndex = (currentIndex + 1) % totalBanners;
       updateTransform();
-    }, 8000); // 8초마다 슬라이드
+    }, 3500);
   }
 
-  // 클릭하면 자동 슬라이드 시작
-  document.getElementById('carousel').addEventListener('click', () => {
-    startAutoSlide();
-  });
-
-  // 초기 설정
+  // 초기 위치 세팅 및 자동 슬라이드 시작
   setInitialPosition();
+  startAutoSlide();
 </script>
 
 </body>

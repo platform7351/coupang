@@ -1,105 +1,127 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>픽고 추천템</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: "Segoe UI", sans-serif;
-      background-color: #ffffff;
-      text-align: center;
-    }
-
-    .title {
-      font-size: clamp(18px, 4vw, 32px);
-      font-weight: 700;
-      color: #ff5722;
-      margin: 24px 0 16px 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .title::before {
-      content: "⭐";
-      font-size: 1.2em;
-    }
-
-    .carousel {
-      position: relative;
-      width: 100%;
-      max-width: 720px;
-      margin: auto;
-      overflow: hidden;
-    }
-
-    .carousel-inner {
-      display: flex;
-      width: 500%;
-      animation: slide 40s infinite;
-    }
-
-    .carousel-inner a {
-      flex: 0 0 100%;
-    }
-
-    .carousel-inner img {
-      width: 100%;
-      height: auto;
-      max-height: 300px;
-      object-fit: contain;
-    }
-
-    @keyframes slide {
-      0%   { transform: translateX(0%); }
-      20%  { transform: translateX(0%); }
-      25%  { transform: translateX(-100%); }
-      45%  { transform: translateX(-100%); }
-      50%  { transform: translateX(-200%); }
-      70%  { transform: translateX(-200%); }
-      75%  { transform: translateX(-300%); }
-      95%  { transform: translateX(-300%); }
-      100% { transform: translateX(0%); }
-    }
-
-    .disclaimer {
-      font-size: 11px;
-      color: #aaa;
-      margin-top: 20px;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>픽고 추천템</title>
+<style>
+  body {
+    margin: 0; padding: 0;
+    font-family: "Segoe UI", sans-serif;
+    background-color: #fff;
+    text-align: center;
+  }
+  .title {
+    font-size: clamp(18px, 4vw, 32px);
+    font-weight: 700;
+    color: #ff5722;
+    margin: 24px 0 16px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  .title::before {
+    content: "⭐";
+    font-size: 1.2em;
+  }
+  .carousel {
+    position: relative;
+    width: 100%;
+    max-width: 720px;
+    margin: auto;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .carousel-inner {
+    display: flex;
+    width: 500%;
+    transition: transform 0.5s ease;
+    /* 애니메이션은 자바스크립트로 제어 */
+  }
+  .carousel-inner a {
+    flex: 0 0 100%;
+  }
+  .carousel-inner img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: contain;
+  }
+  .disclaimer {
+    font-size: 11px;
+    color: #aaa;
+    margin-top: 20px;
+  }
+  .info {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 10px;
+  }
+</style>
 </head>
 <body>
 
-  <div class="title">픽고의 추천템 BEST5</div>
+<div class="title">픽고의 추천템 BEST5</div>
+<div class="info">▶ 광고 영역을 클릭하면 자동 슬라이드가 시작됩니다.</div>
 
-  <div class="carousel">
-    <div class="carousel-inner">
-      <a href="https://link.coupang.com/a/cEsYAn" target="_blank" referrerpolicy="unsafe-url">
-        <img src="https://image2.coupangcdn.com/image/affiliate/banner/6775575bf2273f832cc262760c2b8c9e@2x.jpg" alt="탐사 미니 미용티슈 250매, 250매입, 12개">
-      </a>
-      <a href="https://link.coupang.com/a/cEs0Vz" target="_blank" referrerpolicy="unsafe-url">
-        <img src="https://static.coupangcdn.com/image/affiliate/banner/d0bc6c53ff5f436a6c3c53dc3f29851d@2x.jpg" alt="릴렉스파 안마의자">
-      </a>
-      <a href="https://link.coupang.com/a/cEs04p" target="_blank" referrerpolicy="unsafe-url">
-        <img src="https://img1a.coupangcdn.com/image/affiliate/banner/759fbd0db149d378da6e424a9749d735@2x.jpg" alt="렌가드 필터 세트">
-      </a>
-      <a href="https://link.coupang.com/a/cEs1cu" target="_blank" referrerpolicy="unsafe-url">
-        <img src="https://image2.coupangcdn.com/image/affiliate/banner/76ce4f772b2699cf58eabb72bc3e5d45@2x.jpg" alt="노바핏 러닝 벨트">
-      </a>
-      <a href="https://link.coupang.com/a/cEs1nt" target="_blank" referrerpolicy="unsafe-url">
-        <img src="https://image3.coupangcdn.com/image/affiliate/banner/be314bcf14b96a2ded434f63af574fe8@2x.jpg" alt="여름 냉감 슬랙스">
-      </a>
-    </div>
+<div class="carousel" id="carousel">
+  <div class="carousel-inner" id="carouselInner">
+    <a href="https://link.coupang.com/a/cEsYAn" target="_blank" referrerpolicy="unsafe-url" rel="noopener noreferrer">
+      <img src="https://image2.coupangcdn.com/image/affiliate/banner/6775575bf2273f832cc262760c2b8c9e@2x.jpg" alt="탐사 미니 미용티슈 250매, 250매입, 12개" />
+    </a>
+    <a href="https://link.coupang.com/a/cEs0Vz" target="_blank" referrerpolicy="unsafe-url" rel="noopener noreferrer">
+      <img src="https://static.coupangcdn.com/image/affiliate/banner/d0bc6c53ff5f436a6c3c53dc3f29851d@2x.jpg" alt="릴렉스파 안마의자" />
+    </a>
+    <a href="https://link.coupang.com/a/cEs04p" target="_blank" referrerpolicy="unsafe-url" rel="noopener noreferrer">
+      <img src="https://img1a.coupangcdn.com/image/affiliate/banner/759fbd0db149d378da6e424a9749d735@2x.jpg" alt="렌가드 필터 세트" />
+    </a>
+    <a href="https://link.coupang.com/a/cEs1cu" target="_blank" referrerpolicy="unsafe-url" rel="noopener noreferrer">
+      <img src="https://image2.coupangcdn.com/image/affiliate/banner/76ce4f772b2699cf58eabb72bc3e5d45@2x.jpg" alt="노바핏 러닝 벨트" />
+    </a>
+    <a href="https://link.coupang.com/a/cEs1nt" target="_blank" referrerpolicy="unsafe-url" rel="noopener noreferrer">
+      <img src="https://image3.coupangcdn.com/image/affiliate/banner/be314bcf14b96a2ded434f63af574fe8@2x.jpg" alt="여름 냉감 슬랙스" />
+    </a>
   </div>
+</div>
 
-  <div class="disclaimer">
-    ※ 이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.
-  </div>
+<div class="disclaimer">
+  ※ 이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.
+</div>
+
+<script>
+  const carouselInner = document.getElementById('carouselInner');
+  const totalBanners = carouselInner.children.length;
+  let currentIndex = 0;
+  let intervalId = null;
+
+  // 초기 랜덤 인덱스 선택 및 위치 세팅
+  function setInitialPosition() {
+    currentIndex = Math.floor(Math.random() * totalBanners);
+    updateTransform();
+  }
+
+  function updateTransform() {
+    carouselInner.style.transform = `translateX(-${currentIndex * 100}%)`;
+  }
+
+  // 자동 슬라이드 시작
+  function startAutoSlide() {
+    if (intervalId) return; // 이미 실행중이면 무시
+    intervalId = setInterval(() => {
+      currentIndex = (currentIndex + 1) % totalBanners;
+      updateTransform();
+    }, 8000); // 8초마다 슬라이드
+  }
+
+  // 클릭하면 자동 슬라이드 시작
+  document.getElementById('carousel').addEventListener('click', () => {
+    startAutoSlide();
+  });
+
+  // 초기 설정
+  setInitialPosition();
+</script>
 
 </body>
 </html>
